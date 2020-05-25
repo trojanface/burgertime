@@ -1,9 +1,10 @@
+<!--The title of the page-->
 <h1 class="text-center">Burger Time</h1>
 
-
-
+<!--The uneaten side-->
 <div class="row">
   <div class="col-md-7 text-center">
+    <!--Loop through the burgers and for each one create a paragraph with the name and a button to devour this option-->
     {{#each burgers}}
     {{#unless devoured}}
     <div class="row">
@@ -23,9 +24,9 @@
 
   </div>
 
+<!--The eaten side-->
   <div class="col-md-5 text-center">
-
-
+    <!--Loop through the eaten burgers and for each one create a paragraph with the name and a button to delete this eaten burger-->
     {{#each burgers}}
     {{#if devoured}}
     <div class="row">
