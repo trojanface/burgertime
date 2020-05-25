@@ -12,7 +12,7 @@ $(".change-devoured").on("click", function(event) {
     console.log("pressed");
 });
 
-$(".delete").on("click", function(event) {
+$(".delete-devoured").on("click", function(event) {
     let id = $(this).data("id");
     $.ajax("/api/burgers/" + id, {
         type: "DELETE",

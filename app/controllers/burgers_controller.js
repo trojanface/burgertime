@@ -16,7 +16,6 @@ router.get("/", function (req, res) {
                 }
             );
         });
-        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
@@ -24,45 +23,31 @@ router.get("/", function (req, res) {
 
 
 router.put("/api/burgers/:id", function (req,res) {
-    let condition = "id = " + req.params.id;
     Burger.update (
         {
             devoured: true
-
         },
-        {where: {id: req.params.id}},
-        function(result) {
-            if (result.changedRows === 0) {
-                return res.status(404).end();
-            }
-            res.status(200).end();
-        }
-    )
+        {where: {id: req.params.id}}
+    ).then(function () {
+        res.json({ success: true });
+    });
 
 });
 
 router.post("/api/burgers", function (req, res) {
-    Burger.create({burger_name : req.body.burger_name, devoured: false});
+    Burger.create({burger_name : req.body.burger_name, devoured: false}).then(function () {
+        res.json({ success: true });
+    });
+ 
 });
 
+router.delete("/api/burgers/:id", function (req, res) {
+    Burger.destroy({where : {id : req.params.id}}).then(function () {
+        res.json({ success: true });
+    });
+});
 
 module.exports = router;
 
 
 
-// var data = {
-//     animals: []
-//   };
-
-//   for (var i = 0; i < animals.length; i += 1) {
-//     // Get the current animal.
-//     var currentAnimal = animals[i];
-
-//     // Check if this animal is a pet.
-//     if (currentAnimal.pet) {
-//       // If so, push it into our data.animals array.
-//       data.animals.push(currentAnimal);
-//     }
-//   }
-
-//   res.render("index", data);
