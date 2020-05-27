@@ -22,7 +22,7 @@ A web app that demonstrates capabilities of sequelize, node.js, mysql and handle
 ![A screenshot of Burger Time](screenshot2.png)
 
 ## Link to Deployed App
-https://not yet deployed
+https://bootcamp-burgertime.herokuapp.com/
 
 ## Installation
 1. run npm install

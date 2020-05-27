@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+//Contains the login detail for various environements. Also contains environment variables to protect sensitive info.
 module.exports = {
   "development": {
     "username": process.env.DBUSERNAME,
