@@ -20,9 +20,6 @@ app.engine("handlebars", exphbs({
     defaultLayout: "main",
     extname: "handlebars"
 }));
-//Directs handlebars to where the views are kept
-// var viewsPath = path.join(__dirname, '/app/views');
-// app.set('views', viewsPath);
 
 app.set("view engine", "handlebars");
 
